@@ -21,6 +21,13 @@ class App extends Component {
    */
   handleAddList(s) {
       // Implement this function!
+      let updatedItems = this.state.items;
+      updatedItems[s.newList] = [];
+
+      this.setState( {
+        lists: this.state.lists.concat(s.newList),
+        items: updatedItems
+      } );
   }
 
   /**
@@ -33,6 +40,12 @@ class App extends Component {
    */
   handleAddItem(s) {
       // Implement this function!
+      let updatedItems = this.state.items;
+      updatedItems[s.nameOfItem].push(s.newItem);
+
+      this.setState({ 
+        items: updatedItems
+      });
   }
 
   /**
