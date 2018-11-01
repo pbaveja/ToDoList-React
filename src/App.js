@@ -23,11 +23,10 @@ class App extends Component {
       // Implement this function!
       let updatedItems = this.state.items;
       updatedItems[s.newList] = [];
-
       this.setState( {
         lists: this.state.lists.concat(s.newList),
         items: updatedItems
-      } );
+      }, function() {console.log(this.state);} );
   }
 
   /**
