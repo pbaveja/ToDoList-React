@@ -26,7 +26,7 @@ class App extends Component {
       this.setState( {
         lists: this.state.lists.concat(s.newList),
         items: updatedItems
-      }, function() {console.log(this.state);} );
+      });
   }
 
   /**
@@ -40,11 +40,10 @@ class App extends Component {
   handleAddItem(s) {
       // Implement this function!
       let updatedItems = this.state.items;
-      updatedItems[s.nameOfItem].push(s.newItem);
-
+      updatedItems[s.name].push(s.newItem);
       this.setState({ 
         items: updatedItems
-      });
+      }, function() { console.log(this.state);});
   }
 
   /**
